@@ -1,0 +1,50 @@
+Basic Data Types in C++
+
+bool   =  Boolean value, either true or false
+char   =  character
+short  =  short integer
+int    =  integer
+long   =  long integer
+float  =  single-precision floating-point number
+double =  double-precision floating-point number
+
+
+There is also an enumeration, or enum, type to represent a set of discrete values. 
+Together, enumerations and the types bool, char, and int are called integral types. 
+Finally, there is a special type void, which explicitly indicates the absence of any type information.
+
+
+A char variable holds a single character.
+A char in C++ is typically 8-bits, but the exact number of bits used for a char variable is dependent on the particular implementation. 
+By allowing different implementations to define the meaning of basic types, such as char, C++ can tailor its generated code to each machine architecture and so achieve maximum efficiency.
+
+
+A literal is a constant value appearing in a program. 
+Character literals are enclosed in single quotes, as in ’a’, ’Q’, and ’+’. 
+A backslash ( \) is used to specify a number of special character literals as shown below.
+
+    ’\n’ newline        \t’  tab
+    ’\b’ backspace      ’\0’ null
+    ’\’’ single quote   ’\"’ double quote
+    ’\\’ backslash
+
+The null character, ’\0’, is sometimes used to indicate the end of a string of characters. 
+Every character is associated with an integer code. 
+The function int(ch) returns the integer value associated with a character variable ch.
+
+
+An int variable holds an integer. Integers come in three sizes: short int, (plain) int, and long int. 
+The terms “short” and “long” are synonyms for “short int” and “long int,” respectively. 
+Decimal numbers such as 0, 25, 98765, and -3 are of type int. 
+
+The suffix “l” or “L” can be added to indicate a long integer, as in 123456789L.
+Octal (base 8) constants are specified by prefixing the number with the zero digit, and hexadecimal (base 16) constants can be specified by prefixing the number with “0x.” 
+For example, the literals 256, 0400, and 0x100 all represent the integer value 256 (in decimal).
+
+
+Pointers
+
+Each program variable is stored in the computer’s memory at some location, or
+address. A pointer is a variable that holds the value of such an address. Given a
+type T, the type T* denotes a pointer to a variable of type T. For example, int*
+denotes a pointer to an integer
