@@ -44,7 +44,77 @@ For example, the literals 256, 0400, and 0x100 all represent the integer value 2
 
 Pointers
 
-Each program variable is stored in the computer’s memory at some location, or
-address. A pointer is a variable that holds the value of such an address. Given a
-type T, the type T* denotes a pointer to a variable of type T. For example, int*
-denotes a pointer to an integer
+Each program variable is stored in the computer’s memory at some location, or address. 
+A pointer is a variable that holds the value of such an address. Given a type T, the type T* denotes a pointer to a variable of type T. 
+For example, int* denotes a pointer to an integer.
+
+Two essential operators are used to manipulate pointers. The first returns the address of an object in memory, and the second returns the contents of a given address. 
+In C++ the first task is performed by the address-of operator, &. For example if x is an integer variable in your program &x is the address of x in memory.
+Accessing an object’s value from its address is called dereferencing. This is done using the * operator. 
+
+For example, if we were to declare q to be a pointer to an integer (that is, int*) and then set q = &x, we could access x’s value with *q.
+Assigning an integer value to *q effectively changes the value of x.
+
+char ch = ’Q’;
+char* p = &ch;  // p holds the address of ch
+cout << *p;     // outputs the character ’Q’
+ch = ’Z’;       // ch now holds ’Z’
+cout << *p;     // outputs the character ’Z’
+*p = ’X’;       // ch now holds ’X’
+cout << ch;     // outputs the character ’X’
+
+
+Arrays
+
+An array is a collection of elements of the same type. Given any type T and a constant N, a variable of type T[N] holds an array of N elements, each of type T.
+Each element of the array is referenced by its index, that is, a number from 0 to N − 1. 
+The following statements declare two arrays; one holds three doubles and the other holds 10 double pointers.
+
+double f[5];        // array of 5 doubles: f[0], . . ., f[4]
+int m[10];          // array of 10 ints: m[0], . . ., m[9]
+f[4] = 2.5;
+m[2] = 4;
+cout << f[m[2]];    // outputs f[4], which is 2.5
+
+
+int a[ ] = {10, 11, 12, 13};    // declares and initializes a[4]
+bool b[ ] = {false, true};      // declares and initializes b[2]
+char c[ ] = {’c’, ’a’, ’t’};    // declares and initializes c[3]
+
+
+Pointers and Arrays
+
+There is an interesting connection between arrays and pointers, which C++ inherited from the C programming language—the name of an array is equivalent to a pointer to the array’s initial element and vice versa. 
+In the example below, c is an array of characters, and p and q are pointers to the first element of c. 
+They all behave essentially the same, however.
+
+char c[ ] = {’c’, ’a’, ’t’};
+char* p = c;                    // p points to c[0]
+char* q = &c[0];                // q also points to c[0]
+cout << c[2] << p[2] << q[2];   // outputs “ttt”
+
+C++ provides a shorter way to access members using the “->” operator.
+pointer name->member is equivalent to (*pointer name).member
+
+For example, we could allocate a new passenger object and initialize its members as follows.
+
+Passenger *p;
+p = new Passenger;      // p points to the new Passenger
+p−>name = "Pocahontas"; // set the structure members
+p−>mealPref = REGULAR;
+p−>isFreqFlyer = false;
+p−>freqFlyerNo = "NONE";
+
+
+References
+
+Pointers provide one way to refer indirectly to an object. Another way is through references. A reference is simply an alternative name for an object. 
+Given a type T, the notation T& indicates a reference to an object of type T. Unlike pointers, which can be NULL, a reference in C++ must refer to an actual variable. 
+When a reference is declared, its value must be initialized. Afterwards, any access to the reference is treated exactly as if it is an access to the underlying object.
+
+string author = "Samuel Clemens";
+string& penName = author;   // penName is an alias for author
+penName = "Mark Twain";     // now author = “Mark Twain”
+cout << author;             // outputs “Mark Twain”
+
+
