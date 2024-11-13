@@ -118,3 +118,21 @@ penName = "Mark Twain";     // now author = “Mark Twain”
 cout << author;             // outputs “Mark Twain”
 
 
+Increment and Decrement Operators
+
+var ++     post increment
+var −−     post decrement
+++ var     pre increment
+−− var     pre decrement
+
+
+int a[ ] = {0, 1, 2, 3};
+int i = 2;
+
+int j = i++;    // j = 2 and now i = 3
+int k = −−i;    // now i = 2 and k = 2
+
+cout << a[k++]; // a[2] (= 2) is output; now k = 3
+
+
+
