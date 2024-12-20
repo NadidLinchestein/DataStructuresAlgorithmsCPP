@@ -135,4 +135,9 @@ int k = −−i;    // now i = 2 and k = 2
 cout << a[k++]; // a[2] (= 2) is output; now k = 3
 
 
+Constructors and Destructors
 
+An important aspect of classes is the capability to initialize a class’s member data. 
+
+Constructor - A special member function whose task is to perform such an initialization. It is invoked when a new class object comes into existence. 
+Destructor - A member function that is called when a class object goes out of existence.
